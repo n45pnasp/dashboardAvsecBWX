@@ -2,24 +2,90 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Kinerja AVSEC</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Dashboard Data</h1>
-  </header>
+  <div class="dashboard-container">
 
-  <main class="dashboard">
-    <div id="data-container" class="grid-container">
-      <!-- Data dari Google Sheets akan dimasukkan di sini -->
-    </div>
-  </main>
+    <header>
+      <h1>DASHBOARD KINERJA AVSEC</h1>
+      <h2>BANDAR UDARA INTERNASIONAL BANYUWANGI</h2>
+      <p>DATA YANG DITAMPILKAN INI BERDASAR TIAP BULAN BERJALAN</p>
+      <div class="tanggal-waktu">
+        <span id="tanggal">Senin, 21 Juli 2025</span>
+        <span id="waktu">6:29 WIB</span>
+      </div>
+    </header>
 
-  <footer>
-    <p>&copy; 2025 Dashboard BWX</p>
-  </footer>
+    <main>
+      <section class="box box-wide">
+        <h3>ACP PEMERIKSAAN</h3>
+        <p>POS 1: <b>0 Orang</b> | PETUGAS: <b>#N/A</b></p>
+        <p>ACP TERMINAL: <b>0 Orang</b> | PETUGAS: <b>#N/A</b></p>
+      </section>
+
+      <section class="box">
+        <h3>Instansi yang Melewati ACP</h3>
+        <canvas id="instansiChart"></canvas>
+      </section>
+
+      <section class="box">
+        <h3>Jenis Prohibited Items yang ditangkal</h3>
+        <canvas id="barangChart"></canvas>
+      </section>
+
+      <section class="box green-box">
+        <h3>KUOTA BBM PATROLI</h3>
+        <p><strong>80 LITER</strong></p>
+      </section>
+
+      <section class="box">
+        <h3>FORMASI LEADERS</h3>
+        <ul>
+          <li>CHIEF: NOVAN ANDRIAN</li>
+          <li>SUPERVISOR SCP CABIN: WAHYU HIDAYAT</li>
+          <li>SUPERVISOR POS 1 & CARGO: INDAH NURFEBRINA</li>
+        </ul>
+      </section>
+
+      <section class="box">
+        <h3>FORMASI PERSONIL</h3>
+        <ul>
+          <li>SCP CABIN / PSCP: 3 PERSONIL</li>
+          <li>SCP HBS / HBSCP: 2 PERSONIL</li>
+          <li>DROPZONE: 1 PERSONIL</li>
+          <li>ARRIVAL: 1 PERSONIL</li>
+          <li>MALAM: 3 PERSONIL</li>
+        </ul>
+      </section>
+
+      <section class="box">
+        <h3>PAS yang Beredar</h3>
+        <canvas id="pasChart"></canvas>
+      </section>
+
+      <section class="box">
+        <h3>Prohibited Items yg ditangkal sesuai Flight</h3>
+        <canvas id="flightChart"></canvas>
+      </section>
+
+      <section class="box">
+        <h3>PROHIBITED ITEM YANG DI TANGKAL TERAKHIR</h3>
+        <img src="foto-terakhir.jpg" alt="Barang Tangkal Terakhir" class="foto-tangkal">
+        <p>NAMA BARANG: KOREK</p>
+        <p>SCP PEMERIKSA: SCP CABIN</p>
+        <p>SUPERVISOR: NOVAN ANDRIAN</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Dashboard BWX</p>
+    </footer>
+
+  </div>
 
   <script src="app.js"></script>
 </body>
